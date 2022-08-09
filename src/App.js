@@ -14,6 +14,7 @@ const App = () => {
     setLoading(true);
     try {
       const response = await axios.get(baseUrl + "/1");
+      // ini dia id nomor 1
       console.log(response.data);
       setPosts(response.data);
     } catch (e) {
