@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 const client = axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com/posts",
+  baseURL: "https://jsonplaceholder.typicode.com",
 });
 
 // const baseUrl = "https://jsonplaceholder.typicode.com/posts";
