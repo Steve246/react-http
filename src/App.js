@@ -4,9 +4,9 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const client = axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com/posts",
-});
+// const client = axios.create({
+//   baseURL: "https://jsonplaceholder.typicode.com/posts",
+// });
 
 // const baseUrl = "https://jsonplaceholder.typicode.com/posts";
 

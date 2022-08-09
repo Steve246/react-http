@@ -1,13 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { DepsProvider } from "./shared/DepContext";
+import { serviceFactory } from "./services/ServiceFactory";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { apiClientFactory } from "./services/ApiClientFacotry";
+
+import { clientInstance } from "./shared/AxiosClient";
+
+const apiClient = apiClientFactory(clientInstance);
+const services = serviceFactory(apiClient);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <DepsProvider services={services}>
+      <App />
+    </DepsProvider>
   </React.StrictMode>
 );
 
