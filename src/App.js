@@ -4,7 +4,11 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const baseUrl = "https://jsonplaceholder.typicode.com/posts";
+const client = axios.create({
+  baseURL: "https://jsonplaceholder.typicode.com/posts",
+});
+
+// const baseUrl = "https://jsonplaceholder.typicode.com/posts";
 
 const App = () => {
   const [posts, setPosts] = useState({});
@@ -13,7 +17,7 @@ const App = () => {
   const getPostById = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(baseUrl + "/1");
+      const response = await client.get("/posts/1");
       // ini dia id nomor 1
       console.log(response.data);
       setPosts(response.data);
@@ -27,7 +31,7 @@ const App = () => {
   const createPost = async () => {
     setLoading(true);
     try {
-      const response = await axios.post(baseUrl, {
+      const response = await client.post("/posts", {
         title: "hello world",
         body: "ini baru",
       });
