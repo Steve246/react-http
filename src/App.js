@@ -31,6 +31,8 @@ const App = () => {
         body: "ini baru",
       });
 
+      console.log(response.data);
+
       setPosts(response.data);
     } catch (e) {
     } finally {
