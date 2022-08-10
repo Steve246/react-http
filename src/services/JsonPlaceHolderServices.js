@@ -1,7 +1,7 @@
 export const JsonPlaceHolderServices = ({ doGet, doPost }) => {
   const getPostById = async (id) => {
     try {
-      return await doGet({ url: "/" + id });
+      return await doGet({ url: "/posts/" + id });
     } catch (e) {
       throw e;
     }
@@ -10,7 +10,7 @@ export const JsonPlaceHolderServices = ({ doGet, doPost }) => {
   const createPost = async (title, body) => {
     try {
       return await doPost({
-        url: "/",
+        url: "/posts",
         data: {
           title,
           body,
