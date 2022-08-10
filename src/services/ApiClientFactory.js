@@ -1,7 +1,8 @@
-const ApiClientFactory = (client) => {
+export const apiClientFactory = (client) => {
   const doPost = async ({ url = "", data = null }) => {
     try {
       const response = await client.post(url, data);
+      return response.data;
     } catch (e) {
       throw e;
     }
