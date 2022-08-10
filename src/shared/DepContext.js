@@ -9,6 +9,6 @@ export function useDeps() {
 
 export function DepsProvider({ children, services }) {
   return (
-    <DepsContext.Provider value={{ services }}>{children}</DepsContext.Provider>
+    <DepsContext.Provider value={services}>{children}</DepsContext.Provider>
   );
 }
