@@ -15,8 +15,8 @@ const useJsonPlaceHolder = () => {
     try {
       const response = await jsonPlaceHolderService.getPostById("1");
       // ini dia id nomor 1
-      console.log(response.data);
-      setPosts(response.data);
+      console.log(response);
+      setPosts(response);
     } catch (e) {
       console.log(e);
     } finally {
@@ -31,9 +31,9 @@ const useJsonPlaceHolder = () => {
         "Hello World",
         "ini baru"
       );
-      console.log(response.data);
+      console.log(response);
 
-      setPosts(response.data);
+      setPosts(response);
     } catch (e) {
     } finally {
       setLoading(false);
