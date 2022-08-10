@@ -4,6 +4,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import JsonPlaceHolder from "./features/JsonPlaceaHolder/JsonPlaceHolder";
+import Production from "./features/Product/ProductView";
 
 // const client = axios.create({
 //   baseURL: "https://jsonplaceholder.typicode.com",
@@ -55,7 +56,8 @@ const App = () => {
       {/* <h1> {posts.title} </h1>
       <p> {posts.body} </p>
       <button onClick={createPost}> Create Post </button> */}
-      <JsonPlaceHolder />
+      {/* <JsonPlaceHolder /> */}
+      <Production />
     </div>
   );
 };

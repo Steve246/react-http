@@ -1,7 +1,10 @@
 import { JsonPlaceHolderServices } from "./JsonPlaceHolderServices";
+import { productService } from "./ProductService";
 
-export const serviceFactory = () => {
+export const serviceFactory = (apiClient) => {
   return {
-    jsonPlaceHolderServices: JsonPlaceHolderServices(),
+    jsonPlaceHolderServices: JsonPlaceHolderServices(apiClient),
+
+    productService: productService(apiClient),
   };
 };
